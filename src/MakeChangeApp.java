@@ -1,12 +1,19 @@
-
 public class MakeChangeApp {
-	public static void main(String[] args) {
 
-		// Variables
-		double cost = 0;
-		double tendered = 0;
-		double change = 0;
-		// Scanner
+	// Variables
+	static double cost = 0;
+	static double tendered = 0;
+	static double change = 0;
+
+	public static void main(String[] args) {
+		// Call methods
+
+		printPrompt();
+
+		changeDue();
+	}
+
+	private static void printPrompt() {
 		java.util.Scanner sc = new java.util.Scanner(System.in);
 		// Prompt for user
 		System.out.print("Enter the cost of the item: ");
@@ -26,14 +33,12 @@ public class MakeChangeApp {
 			System.out.println("Incorrect amount given.");
 			System.exit(0);
 		}
-		// Calculate change
 		change = tendered - cost;
-		// Call change and denominations
-		changeDue(cost, tendered, change);
+
 	}
 
 	// Calculate change and denominations
-	private static void changeDue(double cost, double tendered, double change) {
+	private static void changeDue() {
 		System.out.println("Amount: " + cost + " , " + "Tendered: " + tendered + " , " + "Change Due: " + change);
 		System.out.println("Denominations Due: ");
 		if (change >= 100) {
